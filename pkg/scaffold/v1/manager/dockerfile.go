@@ -49,7 +49,7 @@ COPY pkg/    pkg/
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o manager {{ .Repo }}/cmd/manager
 
 # Copy the controller-manager into a thin image
-FROM ubuntu:latest
+FROM ubuntu:kinetic
 WORKDIR /
 COPY --from=builder /go/src/{{ .Repo }}/manager .
 ENTRYPOINT ["/manager"]
