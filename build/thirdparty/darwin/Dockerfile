@@ -50,5 +50,5 @@ WORKDIR /usr/local
 RUN tar -czvf /kubebuilder_darwin_amd64.tar.gz kubebuilder/
 
 # Host the tar.gz file in a thin image
-FROM alpine:3.7
+FROM alpine:3.14
 COPY --from=darwin /kubebuilder_darwin_amd64.tar.gz /kubebuilder_darwin_amd64.tar.gz
