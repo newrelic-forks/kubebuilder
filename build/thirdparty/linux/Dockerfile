@@ -43,5 +43,5 @@ RUN cp etcd-v${ETCD_VERSION}-linux-amd64/etcd $DEST
 WORKDIR /usr/local
 RUN tar -czvf /kubebuilder_linux_amd64.tar.gz kubebuilder/
 
-FROM alpine:3.7
+FROM alpine:3.19.4
 COPY --from=linux /kubebuilder_linux_amd64.tar.gz /kubebuilder_linux_amd64.tar.gz
